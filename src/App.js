@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ViewBillboard from './components/ViewBillboard';
+
+const billboard = { id: 'testID', faceNumber: 'testFaceNumber', rate: 'testRate' }
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>Reagan Billboard Inventory</h2>
         </div>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          View all billboards below.
         </p>
+        <div className="Billboard">
+          <ViewBillboard billboard={billboard}/>
+          <ViewBillboard billboard={billboard}/>
+          <ViewBillboard billboard={billboard}/>
+        </div>
       </div>
     );
   }

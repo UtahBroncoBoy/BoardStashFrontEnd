@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import BillboardItem from './billboardItem';
+import BillboardItem from './BillboardItem';
 
 const styles = {
   color: '#5B2C6F',

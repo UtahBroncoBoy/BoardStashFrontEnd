@@ -7,9 +7,9 @@ import {
   Redirect,
 } from 'react-router-dom';
 
-import Billboards from './containers/billboards/billboards';
-import NewBillboard from './containers/billboards/newBillboard';
-import {NotFound} from './containers/shared/common';
+import Billboards from './containers/billboards/Billboards';
+import NewBillboard from './containers/billboards/NewBillboard';
+import {NotFound} from './containers/shared/Common';
 
 export default () => (
   <Router>

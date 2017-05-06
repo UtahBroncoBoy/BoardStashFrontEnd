@@ -1,14 +1,17 @@
 import React from 'react';
 
 const styles = {
-  border: '1px solid #545454',
-  margin: '10px',
-  padding: '15px'
+  border: '5px solid #5B2C6F',
+  margin: '15px auto',
+  padding: '15px',
+  width: '40%',
+  color: '#5B2C6F',
 };
 
 export default billboard => (
   <div style={{...styles}}>
-    <h4>Billboard Face Number: {billboard._faceNumber}</h4>
-    <p>Rate Level: {billboard._rateLevel}</p>
+    <h4>Billboard Face Number: {billboard.faceNumber}</h4>
+    <p>Rate Level: {billboard.rateLevel}</p>
+    <p>Billboard ID: {billboard._id}</p>
   </div>
 )

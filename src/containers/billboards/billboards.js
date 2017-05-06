@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 
 import BillboardItem from './billboardItem';
 
+const styles = {
+  color: '#5B2C6F',
+};
+
 export default class extends Component {
   constructor(props) {
     super(props)
@@ -10,7 +14,7 @@ export default class extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:4343/billboards/')
+    fetch('https://still-garden-21684.herokuapp.com/billboards/')
       .then(response => response.json())
       .then(billboards => this.setState({billboards}))
       .catch(console.error);
@@ -20,7 +24,7 @@ export default class extends Component {
 
     return (
       <div>
-        <h1>Full List of Billboards</h1>
+        <h2 style={{...styles}}>Full List of Billboards</h2>
 
         {this.state.billboards.map(billboard => BillboardItem(billboard))}
 

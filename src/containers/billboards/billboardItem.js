@@ -10,7 +10,7 @@ const styles = {
 
 export default billboard => (
   <div style={{...styles}}>
-    <h4>Billboard Face Number: {billboard.faceNumber}</h4>
+    <h4>Billboard Face Number(s): {billboard.faceNumber}</h4>
     <p>Rate Level: {billboard.rateLevel}</p>
     <p>Billboard ID: {billboard._id}</p>
   </div>

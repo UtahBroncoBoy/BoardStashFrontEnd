@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import ViewBillboard from './components/ViewBillboard';
+import Routing from './Routing';
+
 
 const billboard = { id: 'testID', faceNumber: 'testFaceNumber', rate: 'testRate' }
 
@@ -9,15 +10,12 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Reagan Billboard Inventory</h2>
+          <h1>BoardStash</h1>
         </div>
         <p className="App-intro">
-          View all billboards below.
         </p>
         <div className="Billboard">
-          <ViewBillboard billboard={billboard}/>
-          <ViewBillboard billboard={billboard}/>
-          <ViewBillboard billboard={billboard}/>
+          <Routing />
         </div>
       </div>
     );

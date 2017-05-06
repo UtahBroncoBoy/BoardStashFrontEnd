@@ -7,7 +7,7 @@ import {
   Redirect,
 } from 'react-router-dom';
 
-import Billboards from './containers/billboards/billboards';
+import Billboards from './containers/billboards/Billboards';
 import NewBillboard from './containers/billboards/NewBillboard';
 import {NotFound} from './containers/shared/Common';
 

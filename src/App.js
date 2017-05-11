@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
-import Routing from './Routing';
-
-
-const billboard = { id: 'testID', faceNumber: 'testFaceNumber', rate: 'testRate' }
+import Billboards from './containers/billboards/Billboards';
+import NewBillboard from './containers/billboards/NewBillboard';
+import DeleteBillboard from './containers/billboards/DeleteBillboard';
+import BoardStashLogo from '../public/BoardStash.png';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <div className="App-header">
-          <h1>BoardStash</h1>
+          <img src={BoardStashLogo} alt="BoardStash Logo" />
         </div>
         <p className="App-intro">
         </p>
-        <div className="Billboard">
-          <Routing />
+        <div>
+          <Billboards className="Billboards"/>
+          <NewBillboard className="NewBillboard" />
+          <DeleteBillboard className="DeleteBillboard" />
         </div>
       </div>
     );

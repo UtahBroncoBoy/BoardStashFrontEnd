@@ -4,7 +4,7 @@ const styles = {
   border: '5px solid #5B2C6F',
   margin: '15px auto',
   padding: '15px',
-  width: '40%',
+  width: '60%',
   color: '#5B2C6F',
 };
 

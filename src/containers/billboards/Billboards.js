@@ -4,6 +4,9 @@ import BillboardItem from './BillboardItem';
 
 const styles = {
   color: '#5B2C6F',
+  display: 'inline-block',
+  width: '60%',
+  float: 'left',
 };
 
 export default class extends Component {
@@ -13,7 +16,7 @@ export default class extends Component {
     this.state = {billboards: []};
   }
 
-  componentDidMount() {
+  componentDidMount () {
     fetch('https://still-garden-21684.herokuapp.com/billboards/')
       .then(response => response.json())
       .then(billboards => this.setState({billboards}))
@@ -23,8 +26,7 @@ export default class extends Component {
   render() {
 
     return (
-      <div>
-        <h2 style={{...styles}}>Full List of Billboards</h2>
+      <div style={{...styles}}>
 
         {this.state.billboards.map(billboard => BillboardItem(billboard))}
 

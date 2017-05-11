@@ -9,6 +9,7 @@ import {
 
 import Billboards from './containers/billboards/Billboards';
 import NewBillboard from './containers/billboards/NewBillboard';
+import DeleteBillboard from './containers/billboards/DeleteBillboard';
 import {NotFound} from './containers/shared/Common';
 
 export default () => (
@@ -16,6 +17,7 @@ export default () => (
     <Switch>
       <Route path="/" exact component={Billboards}/>
       <Route path="/newbillboard" component={NewBillboard}/>
+      <Route path="/deleteBillboard" component={DeleteBillboard}/>
       <Redirect from="/billboards" to="/"/>
       <Route component={NotFound} />
     </Switch>

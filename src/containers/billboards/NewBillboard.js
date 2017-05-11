@@ -1,5 +1,15 @@
 import React, {Component} from 'react';
 
+const styles = {
+  border: '5px solid #5B2C6F',
+  margin: '15px auto',
+  padding: '15px',
+  color: '#5B2C6F',
+  width: '25%',
+  display: 'inline-block',
+  verticleAlign: 'top',
+};
+
 export default class NewBillboard extends Component {
   constructor(props){
     super(props);
@@ -22,17 +32,21 @@ export default class NewBillboard extends Component {
   handleSubmit = e => {
     e.preventDefault();
     let billboard = {};
-    billboard.faceNumber = this.state.faceNumber;
+    billboard.faceNumber = parseInt(this.state.faceNumber, 10);
     billboard.rateLevel = this.state.rateLevel;
     this.createBillboard(billboard);
+    alert(`Billboard #${this.state.faceNumber} was created.`)
+    //figure out how to cause the app component to rerender instead of doing a full reload.
+    window.location.reload(true);
   }
 
   render() {
     return(
-      <div>
+      <div style={{...styles}}>
+        <h3>Add New Board:</h3>
         <form onSubmit={this.handleSubmit} method="post" name="form">
           <div>
-            <label htmlFor="faceNumber">Face Number</label>
+            <label htmlFor="faceNumber">Face Number: </label>
             <input 
               type="text" 
               id="faceNumber" 
@@ -41,7 +55,7 @@ export default class NewBillboard extends Component {
             />
           </div>
           <div>
-            <label htmlFor="rateLevel">Rate Level</label>
+            <label htmlFor="rateLevel">Rate Level: </label>
             <input 
               type="text" 
               id="rateLevel" 
@@ -49,6 +63,7 @@ export default class NewBillboard extends Component {
               onChange={ e => this.setState({rateLevel: e.target.value})}
             />
           </div>
+          <br/>
           <div className="button">
             <button type="submit">Add Billboard</button>
           </div>

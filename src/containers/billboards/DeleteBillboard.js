@@ -18,14 +18,17 @@ export default class DeleteBillboard extends Component {
 
   deleteBillboard = billboard => {
 
-    fetch(`https://still-garden-21684.herokuapp.com/billboards/${billboard.faceNumber}`, {method: 'delete'})
+    fetch(`https://still-garden-21684.herokuapp.com/billboards/${billboard.faceNumber}`, {method: 'delete', mode:'cors'})
   }
 
   handleSubmit = e => {
-    e.preventDefault();
-    let billboard = {};
-    billboard.faceNumber = this.state.faceNumber;
-    this.deleteBillboard(billboard);
+      e.preventDefault();
+      let billboard = {};
+      billboard.faceNumber = this.state.faceNumber;
+      this.deleteBillboard(billboard);
+      alert(`Billboard #${this.state.faceNumber} has been deleted.`)
+      //figure out how to cause the app component to rerender instead of doing a full reload.
+      window.location.reload(true);
   }
 
   render() {
@@ -37,9 +40,9 @@ export default class DeleteBillboard extends Component {
             <label htmlFor="faceNumber">Face Number: </label>
             <input 
               type="text" 
-              id="id" 
-              name="id"
-              onChange={ e => this.setState({_id: e.target.value})}
+              id="faceNumber" 
+              name="faceNumber"
+              onChange={ e => this.setState({faceNumber: e.target.value})}
             />
           </div>
           <br />
